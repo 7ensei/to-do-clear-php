@@ -18,5 +18,15 @@
     },
     "require-dev": {
         "heroku/heroku-buildpack-php": "^231.0"
+    },
+    "extra": {
+        "heroku": {
+            "apache": {
+                "document_root": "/",
+                "rewrite": {
+                    "enabled": true
+                }
+            }
+        }
     }
 }
