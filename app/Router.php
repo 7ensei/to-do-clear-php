@@ -43,7 +43,7 @@ class Router
         $url = trim($url, '/');
         $url = $query ? trim($url, '/') . '?' . $query : trim($url, '/');
 
-        return dirname($_SERVER['SCRIPT_NAME']) . '/' . $url;
+        return rtrim(dirname($_SERVER['SCRIPT_NAME']), '/') . '/' . $url;
     }
 
     public static function redirect(string $url, array $params = []): void
