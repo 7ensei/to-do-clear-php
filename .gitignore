@@ -1,0 +1,4 @@
+my-db
+vendor
+.idea
+docker-compose.yaml

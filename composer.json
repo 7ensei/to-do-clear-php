@@ -1,0 +1,19 @@
+{
+    "name": "ilia/to-do-php",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ilia Baturin",
+            "email": "i.baturin@qsoft.ru"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.5",
+        "ext-pdo": "*"
+    }
+}
