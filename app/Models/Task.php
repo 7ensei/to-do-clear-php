@@ -56,8 +56,6 @@ class Task
     public static function update($id, string $task, bool $status, $changed): void
     {
         global $pdo;
-        print_r((int)$status);
-        print_r((int)$changed);
         $sql = "UPDATE tasks SET task=?, status=?, changed=? WHERE id=?";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$task, (int)$status, (int)$changed, $id]);

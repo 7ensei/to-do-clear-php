@@ -35,8 +35,8 @@ class TaskController
         Validation::admin();
 
         $task = Task::find($_GET['id']);
-        include_once __DIR__ . '/../Views/Tasks/update.php';
 
+        include_once __DIR__ . '/../Views/Tasks/update.php';
     }
 
     public function update()
@@ -55,7 +55,6 @@ class TaskController
     public function delete()
     {
         Validation::admin();
-
         Task::delete($_POST['id']);
         Router::redirect('/');
     }
