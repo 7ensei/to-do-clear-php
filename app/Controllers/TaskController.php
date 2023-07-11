@@ -16,11 +16,9 @@ class TaskController
         $sort = $_GET['sort'] ?? 'desc';
         $tasks = Task::get($page, $order, $sort);
         $maxPage = Task::maxPage();
-
         $is_auth = Session::get('is_auth');
         $is_admin = Session::get('is_admin');
         $success = Session::getOnce('success');
-
 
         include_once __DIR__ . '/../Views/Tasks/index.php';
     }
@@ -34,7 +32,6 @@ class TaskController
 
     public function edit()
     {
-        Validation::authorized();
         Validation::admin();
 
         $task = Task::find($_GET['id']);
@@ -44,7 +41,6 @@ class TaskController
 
     public function update()
     {
-        Validation::authorized();
         Validation::admin();
 
         $status = !!$_POST['status'];
@@ -58,7 +54,7 @@ class TaskController
 
     public function delete()
     {
-        Validation::authorized();
+        Validation::admin();
 
         Task::delete($_POST['id']);
         Router::redirect('/');

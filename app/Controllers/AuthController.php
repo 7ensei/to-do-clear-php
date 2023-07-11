@@ -27,10 +27,10 @@ class AuthController
             if ($user['is_admin']) {
                 Session::set('is_admin', true);
             }
-        } else {
-            Session::set('error', true);
+            Router::redirect('/');
         }
 
+        Session::set('error', true);
         Router::redirect('/login');
 
     }

@@ -11,18 +11,9 @@ class Validation
         return $cur !== $prev;
     }
 
-    public static function authorized(): void
-    {
-        session_start();
-        if (!$_SESSION['is_auth']) {
-            Router::redirect('/login');
-        }
-    }
-
     public static function admin(): void
     {
-        session_start();
-        if (!$_SESSION['is_admin']) {
+        if (!(Session::get('is_admin') && Session::get('is_auth'))) {
             Router::redirect('/login');
         }
     }
