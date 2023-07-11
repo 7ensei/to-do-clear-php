@@ -41,7 +41,7 @@ use App\Router;
                     <?php if ($task['status']): ?> checked <?php endif; ?>
                 >
                 <label class="form-check-label" for="flexCheckChecked">
-                    Status
+                    Done
                 </label>
             </div>
             <input type="submit" class="btn btn-primary" value="Submit">

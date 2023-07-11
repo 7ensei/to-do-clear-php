@@ -124,7 +124,7 @@ use App\Models\Task;
                                         <?php if ($task['status']): ?> checked <?php endif; ?>
                                     >
                                     <label class="form-check-label" for="status">
-                                        Status
+                                        Done
                                     </label>
                                 </div>
                                 <div class="form-check text-start my-3">
