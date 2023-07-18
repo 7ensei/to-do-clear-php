@@ -30,7 +30,7 @@ class Router
 
     public static function getUrl(): string
     {
-        return rtrim(str_replace(dirname($_SERVER['SCRIPT_NAME']), '/', explode('?', $_SERVER['REQUEST_URI'])[0]), '/') ?: '/';
+        return '/' . trim(str_replace(dirname($_SERVER['SCRIPT_NAME']), '/', (explode('?', $_SERVER['REQUEST_URI'])[0])), '/') ?: '/';
     }
 
     public static function generateUrl(string $url, array $params = []): string
